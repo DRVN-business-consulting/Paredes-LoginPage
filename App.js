@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
 import React, { useState, useEffect } from 'react';
 
-
+// Hardcoded credentials
 const userName = 'adminme';
 const Password = 'Password123!';
 
@@ -13,10 +13,10 @@ export default function App() {
     const [passwordValid, setPasswordValid] = useState(true);
     const [usernameLength, setUsernameLength] = useState(0);
     const [loginStatus, setLoginStatus] = useState('');
-    const [themeEmoji, setThemeEmoji] = useState('🐵'); 
+    const [themeEmoji, setThemeEmoji] = useState('🐵'); // Default to light theme emoji
 
     useEffect(() => {
-
+        // Validate password
         const validatePassword = () => {
             const hasUpperCase = /[A-Z]/.test(password);
             const hasLowerCase = /[a-z]/.test(password);
@@ -30,12 +30,12 @@ export default function App() {
     }, [password]);
 
     useEffect(() => {
-
+        // Update username length
         setUsernameLength(username.length);
     }, [username]);
 
     useEffect(() => {
-
+        // Update theme emoji based on theme
         setThemeEmoji(switchValue ? '🙈' : '🐵');
     }, [switchValue]);
 
